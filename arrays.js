@@ -71,6 +71,16 @@ document.addEventListener('keydown', (event) => {
     if (event.code === 'KeyD') moveRight();
 });
 
+document.addEventListener('pointerdown', (event) => {
+    if (!work || event.target.closest('.btn')) return;
+    
+    if (event.clientX < window.innerWidth / 2) {
+        moveLeft();
+    } else {
+        moveRight();
+    }
+});
+
 function runBlock(blockObj) {
     const laneWidth = window.innerWidth / totalLanes;
     const randomX = (blockObj.lane * laneWidth) + (Math.random() * (laneWidth - 50));
@@ -135,6 +145,9 @@ function start() {
     pointsCount = 0;
     hearts = 3;
     currentStage = 0;
+    // del btn start
+    const startBtn = document.querySelector('.start');
+    startBtn.style.display = 'none';
     initBlocks();
     update();
     startGameLoops();
