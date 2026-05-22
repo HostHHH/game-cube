@@ -49,9 +49,10 @@ body{
 body {
   overflow-x: hidden;
   overflow-y: hidden;
+  touch-action: none;
 }
 .start{
-  margin-left: 200px;
+  margin-left: 20px;
 }
 .pos{
   background:rgb(5, 239, 165);
@@ -60,10 +61,11 @@ body {
 .scored{
   position: absolute;
   top: 10px;
-  left: 1450px;
+  right: 20px;
   font-size: 20px;
   color: white;
 }
 .hearts{
-  left: 1300px;
+  left: 20px;
+  right: auto;
 }
