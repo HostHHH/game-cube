@@ -1,71 +1,141 @@
-body{
-  background:linear-gradient(45deg,rgb(41, 223, 156),rgb(23, 7, 95));
-  display:flex;
-  height:100vh;
-  background-size: 400% 400%;
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    touch-action: none;
+    background: linear-gradient(45deg, rgb(41, 223, 156), rgb(23, 7, 95));
+    background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
 }
+
 @keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+#desktop-container, #mobile-container {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+@media (min-width: 769px) {
+    #desktop-container.active {
+        display: block;
     }
-    50% {
-        background-position: 100% 50%;
+}
+
+@media (max-width: 768px) {
+    #mobile-container.active {
+        display: block;
     }
-    100% {
-        background-position: 0% 50%;
-    }
 }
-.block{
-  background: rgb(69, 65, 65);
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 2px solid rgb(94, 91, 91);
+
+.desktop-block {
+    background: rgb(69, 65, 65);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid rgb(94, 91, 91);
 }
-.btn{
-  position:absolute;
-  width:100px;
-  height:100px;
-  
+
+.desktop-btn {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+    z-index: 10;
 }
-.def{
-  width:100px;
-  height:100px;
-  background:grey;
-  margin-top:30%;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
-  color: white;
-  border-radius: 50%;
-  border: 2px solid white;
+
+.desktop-player {
+    width: 100px;
+    height: 100px;
+    background: grey;
+    top: 70%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: white;
+    border-radius: 50%;
+    border: 2px solid white;
 }
-.L{
-    margin-left: 100px;
+
+.desktop-pos {
+    background: rgb(5, 239, 165);
+    border: 2px solid rgb(106, 183, 142);
 }
-body {
-  overflow-x: hidden;
-  overflow-y: hidden;
-  touch-action: none;
+
+.desktop-scored, .desktop-hearts {
+    position: absolute;
+    top: 10px;
+    font-size: 20px;
+    color: white;
+    z-index: 10;
 }
-.start{
-  margin-left: 20px;
+
+.desktop-scored { right: 20px; }
+.desktop-hearts { left: 20px; }
+
+.mobile-block {
+    background: rgb(69, 65, 65);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid rgb(94, 91, 91);
 }
-.pos{
-  background:rgb(5, 239, 165);
-  border: 2px solid rgb(106, 183, 142);
+
+.mobile-player {
+    width: 50px;
+    height: 50px;
+    background: grey;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: white;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-left: 280px;
+    z-index: 10;
 }
-.scored{
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 20px;
-  color: white;
+
+.mobile-pos {
+    background: rgb(5, 239, 165);
+    border: 2px solid rgb(106, 183, 142);
 }
-.hearts{
-  left: 20px;
-  right: auto;
+
+.mobile-scored, .mobile-hearts {
+    position: absolute;
+    top: 10px;
+    font-size: 20px;
+    color: white;
+    z-index: 15;
+}
+
+.mobile-scored { right: 20px; }
+.mobile-hearts { left: 20px; }
+
+.mobile-btnMove {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    background: none;
+    border: none;
+    z-index: 5;
+}
+
+.mobile-up { top: 0; }
+.mobile-down { bottom: 0; }
+
+.mobile-btn {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+    z-index: 20;
 }
