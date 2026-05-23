@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Game</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class='def'>:)</div>
-<button class="btn start" onclick="start()"> start</button>
-<div class='scored'>Points: 0</div>
-<div class='hearts scored'>Hearts: 3</div>
-    <script src="arrays.js"></script>
+
+<div id="desktop-container">
+    <div class="desktop-player">:)</div>
+    <button class="desktop-btn" id="desktop-start-btn">start</button>
+    <div class="desktop-scored" id="desktop-score">Points: 0</div>
+    <div class="desktop-hearts" id="desktop-hearts">Hearts: 3</div>
+</div>
+
+<div id="mobile-container">
+    <div class="mobile-player">:)</div>
+    <div class="mobile-scored" id="mobile-score">Points: 0</div>
+    <div class="mobile-hearts" id="mobile-hearts">Hearts: 3</div>
+    <button class="mobile-btnMove mobile-up" id="mobile-up-btn"></button>
+    <button class="mobile-btnMove mobile-down" id="mobile-down-btn"></button>
+    <button class="mobile-btn" id="mobile-start-btn">start</button>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
